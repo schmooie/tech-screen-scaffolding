@@ -12,21 +12,13 @@ export default function TrafficLight() {
   const [currentLight, setCurrentLight] = useState(colorLights[0]);
 
   useEffect(() => {
-    let timeoutId;
-
-    function cycleLight() {
-      const { duration, next } = LIGHTS[currentLight];
-
-      timeoutId = setTimeout(() => {
-        setCurrentLight(next);
-        cycleLight();
-      }, duration);
-    }
-
-    cycleLight();
+    const { duration, next } = LIGHTS[currentLight];
+    const timeoutId = setTimeout(() => {
+      setCurrentLight(next);
+    }, duration);
 
     return () => clearTimeout(timeoutId);
-  })
+  }, [currentLight])
 
   return (
     <section>
