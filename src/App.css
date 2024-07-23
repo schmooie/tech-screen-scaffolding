@@ -7,3 +7,21 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+.cell-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 1px solid black;
+  height: 150px;
+  width: 50px;
+  flex-basis: 30%;
+  margin: 6px;
+}
+
+.cell--active {
+  background-color: green;
+  ;
+}
